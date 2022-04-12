@@ -162,13 +162,13 @@ const Contact = ({ setThemeDark, theme }) => {
           <p>Email: its.abhisheks@outlook.com</p>
 
           <InputBox>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Name" name="name" />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="E-mail" />
+            <input type="text" placeholder="E-mail" name="email" />
           </InputBox>
           <InputBox>
-            <textarea type="text" placeholder="Message" />
+            <textarea type="text" placeholder="Message" name="messsge" />
           </InputBox>
           <InputBox>
             <input type="submit" value="Submit" />
