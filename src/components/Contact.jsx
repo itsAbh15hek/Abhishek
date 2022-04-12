@@ -142,13 +142,6 @@ const InputBox = styled.div`
     border: 2px solid ${(props) => `rgba(${props.theme.textRgba}, 0.8)`};
   }
 `;
-const SideBar = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 30%;
-  background-color: ${(props) => props.theme.text};
-  right: 0;
-`;
 
 const Contact = ({ setThemeDark, theme }) => {
   return (
