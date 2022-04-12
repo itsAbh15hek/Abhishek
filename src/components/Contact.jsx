@@ -155,12 +155,12 @@ const Contact = ({ setThemeDark, theme }) => {
         <Square del={2}></Square>
         <Square del={3}></Square>
         <Square del={4}></Square>
-        <Form action="POST" name="contact" data-netlify="true">
+        <Form action="POST" name="contact">
           <Title>
             <h2>Drop Me a Message</h2>
           </Title>
           <p>Email: its.abhisheks@outlook.com</p>
-
+          <input type="hidden" name="form-name" value="contact" />
           <InputBox>
             <input type="text" placeholder="Name" name="name" />
           </InputBox>
