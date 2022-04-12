@@ -70,6 +70,7 @@ const Main = styled.div`
   top: 15%;
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
+  text-align: justify;
   @media (max-width: 425px) {
     left: calc(1.2rem + 5vw);
   }

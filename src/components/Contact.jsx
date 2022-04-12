@@ -155,7 +155,7 @@ const Contact = ({ setThemeDark, theme }) => {
         <Square del={2}></Square>
         <Square del={3}></Square>
         <Square del={4}></Square>
-        <Form>
+        <Form action="POST" data-netlify="true">
           <Title>
             <h2>Drop Me a Message</h2>
           </Title>
