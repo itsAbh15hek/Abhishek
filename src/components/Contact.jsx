@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import BigTitle from "../subComponents/BigTitle";
 import LogoComponent from "../subComponents/LogoComponent";
@@ -144,6 +144,25 @@ const InputBox = styled.div`
 `;
 
 const Contact = ({ setThemeDark, theme }) => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+  const handleSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...form }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
   return (
     <Box>
       <LogoComponent theme={theme} setThemeDark={setThemeDark} />
@@ -155,20 +174,34 @@ const Contact = ({ setThemeDark, theme }) => {
         <Square del={2}></Square>
         <Square del={3}></Square>
         <Square del={4}></Square>
-        <Form action="POST" name="contact">
+        <Form onSubmit={handleSubmit}>
           <Title>
             <h2>Drop Me a Message</h2>
           </Title>
           <p>Email: its.abhisheks@outlook.com</p>
-          <input type="hidden" name="form-name" value="contact" />
           <InputBox>
-            <input type="text" placeholder="Name" name="name" />
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={(e) => setForm({ [e.target.name]: e.target.value })}
+            />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="E-mail" name="email" />
+            <input
+              type="text"
+              placeholder="E-mail"
+              name="email"
+              onChange={(e) => setForm({ [e.target.name]: e.target.value })}
+            />
           </InputBox>
           <InputBox>
-            <textarea type="text" placeholder="Message" name="messsge" />
+            <textarea
+              type="text"
+              placeholder="Message"
+              name="messsge"
+              onChange={(e) => setForm({ [e.target.name]: e.target.value })}
+            />
           </InputBox>
           <InputBox>
             <input type="submit" value="Submit" />
