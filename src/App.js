@@ -8,7 +8,6 @@ import WorkPage from "./components/WorkPage.jsx";
 import MySkills from "./components/MySkills.jsx";
 import { darkTheme, lightTheme } from "./components/Themes.jsx";
 import GlobalStyle from "./globalStyles";
-import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar.jsx";
 import Contact from "./components/Contact.jsx";
 
