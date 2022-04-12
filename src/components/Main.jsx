@@ -244,7 +244,7 @@ const Main = ({ setThemeDark, theme }) => {
           }}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
-          href="https://www.canva.com/design/DAErNPnlJ9o/view?utm_content=DAErNPnlJ9o&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+          href="../assets/resume/Abhishek Singh Resume.pdf"
           target="_blank"
           download
           click={click}
