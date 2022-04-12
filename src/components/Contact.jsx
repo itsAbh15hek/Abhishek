@@ -148,7 +148,7 @@ const Contact = ({ setThemeDark, theme }) => {
     <Box>
       <LogoComponent theme={theme} setThemeDark={setThemeDark} />
       <PowerButton />
-      <ParticleComponent theme={theme} page={"skills"} />
+      <ParticleComponent theme={theme} page={"about"} />
       <Main>
         <Square del={0}></Square>
         <Square del={1}></Square>
