@@ -60,6 +60,7 @@ const Main = styled.div`
   z-index: 3;
   line-height: 1.5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: calc(0.6rem + 1vw);
@@ -84,12 +85,21 @@ const About = ({ setThemeDark, theme }) => {
         <img src={KunaiImg} alt="" />
       </Kunai>
       <Main>
-        I'm a front-end developer located in India. I love to create simple yet
-        beautiful websites with great user experience. I'm interested in the
-        whole frontend stack Like trying new things and building great projects.
-        I'm an independent freelancer and blogger. I love to write blogs and
-        read books. I believe everything is an Art when you put your
-        consciousness in it. You can connect with me via social links.
+        <p>
+          Hi, I am Abhishek Singh. I'm a Full Stack Developer and a BCA(final
+          year) student at Lucknow University.
+        </p>
+        <p>
+          I’ve always been someone who has both a creative and a logical side.
+          When I discovered web design in college, I realized it would be the
+          perfect fit. I started with Front End Development in 2020, learnt a
+          lot of things during the lockdown and in 2021, I picked up backend
+          technologies to become a Full Stack Developer.
+        </p>
+        <p>
+          I like trying new things and building great projects that last an
+          impression. You can connect with me via email or social links.
+        </p>
       </Main>
       <BigTitle top="75%" left="55%" text="ABOUT" />
       <SocialIcons />
