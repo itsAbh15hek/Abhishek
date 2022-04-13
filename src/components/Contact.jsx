@@ -152,6 +152,7 @@ const Contact = ({ setThemeDark, theme }) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("Not Submitted");
 
   const validate = (formData) => {
     let formErrors = {};
@@ -175,7 +176,6 @@ const Contact = ({ setThemeDark, theme }) => {
   const handleSubmit = (e) => {
     setErrors(validate(formData));
     setIsSubmitted(true);
-    console.log(isSubmitted, errors);
     e.preventDefault();
   };
 
@@ -189,13 +189,16 @@ const Contact = ({ setThemeDark, theme }) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitted) {
-      console.log(formData);
+      setSubmitStatus("Submitted");
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact-form", ...formData }),
       })
-        .then((res) => console.log(res))
+        .then((res) => {
+          if (res.status.toString() === "200") setSubmitStatus("Successful");
+          if (res.status.toString() !== "200") setSubmitStatus("Failed");
+        })
         .then(() => setIsSubmitted(false))
         .then(() => setFormData({ name: "", email: "", msg: "" }))
         .catch((error) => alert(error));
@@ -214,38 +217,77 @@ const Contact = ({ setThemeDark, theme }) => {
         <Square del={3}></Square>
         <Square del={4}></Square>
         <Form onSubmit={handleSubmit}>
-          <Title>Drop Me a Message</Title>
-          <p>Email: its.abhisheks@outlook.com</p>
-          <InputBox>
-            <input
-              type="text"
-              placeholder={errors.name ? errors.name : "Name"}
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </InputBox>
-          <InputBox>
-            <input
-              type="text"
-              placeholder={errors.email ? errors.email : "E-mail"}
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </InputBox>
-          <InputBox>
-            <textarea
-              type="text"
-              placeholder={errors.msg ? errors.msg : "Message"}
-              name="msg"
-              value={formData.msg}
-              onChange={handleChange}
-            />
-          </InputBox>
-          <InputBox>
-            <input type="submit" value="Submit" />
-          </InputBox>
+          {submitStatus === "Not Submitted" && (
+            <>
+              <Title>Drop Me a Message</Title>
+              <p>Email: its.abhisheks@outlook.com</p>
+              <InputBox>
+                <input
+                  type="text"
+                  placeholder={errors.name ? errors.name : "Name"}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </InputBox>
+              <InputBox>
+                <input
+                  type="text"
+                  placeholder={errors.email ? errors.email : "E-mail"}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </InputBox>
+              <InputBox>
+                <textarea
+                  type="text"
+                  placeholder={errors.msg ? errors.msg : "Message"}
+                  name="msg"
+                  value={formData.msg}
+                  onChange={handleChange}
+                />
+              </InputBox>
+              <InputBox>
+                <input type="submit" value="Submit" />
+              </InputBox>
+            </>
+          )}
+          {submitStatus === "Successful" && (
+            <>
+              <p style={{ textAlign: "center" }}>
+                Your Message has been recieved.
+              </p>
+              <p
+                style={{
+                  textAlign: "center",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => setSubmitStatus("Not Submitted")}
+              >
+                Send Another
+              </p>
+            </>
+          )}
+          {submitStatus === "Failed" && (
+            <>
+              <p style={{ textAlign: "center" }}>Submission Failed. </p>
+              <p
+                style={{
+                  textAlign: "center",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => setSubmitStatus("Not Submitted")}
+              >
+                Try Again
+              </p>
+            </>
+          )}
+          {submitStatus === "Submitted" && (
+            <p style={{ textAlign: "center" }}>Processing...</p>
+          )}
         </Form>
       </Main>
 
