@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import BigTitle from "../subComponents/BigTitle";
 import LogoComponent from "../subComponents/LogoComponent";
@@ -144,6 +145,62 @@ const InputBox = styled.div`
 `;
 
 const Contact = ({ setThemeDark, theme }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    msg: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validate = (formData) => {
+    let formErrors = {};
+    if (!formData.name) {
+      formErrors.name = "Name is required";
+    }
+    if (!formData.email) {
+      formErrors.email = "Email is required";
+    }
+    if (!formData.msg) {
+      formErrors.msg = "Message is required";
+    }
+    return formErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    setErrors(validate(formData));
+    setIsSubmitted(true);
+    console.log(isSubmitted, errors);
+    e.preventDefault();
+  };
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitted) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", ...formData }),
+      })
+        .then((res) => console.log(res))
+        .then(() => setIsSubmitted(false))
+        .then(() => setFormData({ name: "", email: "", message: "" }))
+        .catch((error) => alert(error));
+    }
+  }, [errors, formData, isSubmitted]);
+
   return (
     <Box>
       <LogoComponent theme={theme} setThemeDark={setThemeDark} />
@@ -155,22 +212,34 @@ const Contact = ({ setThemeDark, theme }) => {
         <Square del={2}></Square>
         <Square del={3}></Square>
         <Square del={4}></Square>
-        <Form method="POST" name="contact" data-netlify="true">
+        <Form onSubmit={handleSubmit}>
           <Title>Drop Me a Message</Title>
           <p>Email: its.abhisheks@outlook.com</p>
-          <input type="hidden" name="form-name" value="contact" />
           <InputBox>
-            <input required type="text" placeholder="Name" name="name" />
+            <input
+              type="text"
+              placeholder={errors.name ? errors.name : "Name"}
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
           </InputBox>
           <InputBox>
-            <input required type="text" placeholder="E-mail" name="email" />
+            <input
+              type="text"
+              placeholder={errors.email ? errors.email : "E-mail"}
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </InputBox>
           <InputBox>
             <textarea
-              required
               type="text"
-              placeholder="Message"
-              name="messsge"
+              placeholder={errors.msg ? errors.msg : "Message"}
+              name="msg"
+              value={formData.msg}
+              onChange={handleChange}
             />
           </InputBox>
           <InputBox>
