@@ -196,7 +196,7 @@ const Contact = ({ setThemeDark, theme }) => {
       })
         .then((res) => console.log(res))
         .then(() => setIsSubmitted(false))
-        .then(() => setFormData({ name: "", email: "", message: "" }))
+        .then(() => setFormData({ name: "", email: "", msg: "" }))
         .catch((error) => alert(error));
     }
   }, [errors, formData, isSubmitted]);
