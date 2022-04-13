@@ -196,6 +196,7 @@ const Contact = ({ setThemeDark, theme }) => {
         body: encode({ "form-name": "contact-form", ...formData }),
       })
         .then((res) => {
+          console.log(res);
           if (res.status.toString() === "200") setSubmitStatus("Successful");
           if (res.status.toString() !== "200") setSubmitStatus("Failed");
         })
