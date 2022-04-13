@@ -189,6 +189,7 @@ const Contact = ({ setThemeDark, theme }) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitted) {
+      console.log(formData);
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
