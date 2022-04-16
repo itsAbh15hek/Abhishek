@@ -8,6 +8,7 @@ import { ReactComponent as YinYang } from "../assets/svg/yin-yang-solid.svg";
 import { keyframes } from "styled-components";
 import Intro from "./Intro";
 import { motion } from "framer-motion";
+import ResumePdf from "../assets/resume/Abhishek_Singh_Resume.pdf";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -244,7 +245,7 @@ const Main = ({ setThemeDark, theme }) => {
           }}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
-          href="../assets/resume/Abhishek_Singh_Resume.pdf"
+          href={ResumePdf}
           target="_blank"
           download
           click={click}
