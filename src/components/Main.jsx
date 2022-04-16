@@ -244,7 +244,7 @@ const Main = ({ setThemeDark, theme }) => {
           }}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
-          href="../assets/resume/Abhishek Singh Resume.pdf"
+          href="../assets/resume/Abhishek_Singh_Resume.pdf"
           target="_blank"
           download
           click={click}
