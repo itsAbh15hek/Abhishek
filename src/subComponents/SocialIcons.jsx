@@ -15,9 +15,9 @@ const Icons = styled.div`
   left: 2.2rem;
   z-index: 4;
   a {
-    width: 1.6rem;
-    height: 1.6rem;
-    margin-bottom: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.8rem;
   }
   .socialIcon {
     width: 100%;
@@ -86,7 +86,7 @@ const Icons = styled.div`
 
 const Line = styled(motion.span)`
   width: 2px;
-  height: 8rem;
+  height: 6rem;
   background-color: ${(props) =>
     props.click ? props.theme.body : props.theme.text};
 

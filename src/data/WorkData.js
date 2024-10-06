@@ -1,32 +1,35 @@
 export const Work = [
   {
     id: 1,
-    name: "ANCHOR STORE",
+    name: "Dest Dating",
     description:
-      "A Full Stack E-Commerce Web App with interactive and responsive UI. It includes cart and checkout functionality. It has user authentication and password encryption.",
-    tags: ["ReactJS", "Express", "Node", "MongoDb, CSS"],
+      "Google O-Auth and form based Login. Real-time Chat, Video Call and Synchronised Movie Watching with Video Call. Stripe Payment Gateway for premium preference filtering.",
+    tags: ["MERN Stack", "CSS", "Socket,io", "WebRTC", "Firestore"],
 
-    demo: "https://anchorstore.netlify.app/",
-    github: "https://github.com/itsAbh15hek/AnchorStore",
+    demo: "https://github.com/Dest-Dating/dest-dating",
+    youtube: "https://www.youtube.com/watch?v=ha-3CF8DvoY",
+    github: "https://github.com/Dest-Dating/dest-dating",
   },
   {
     id: 2,
-    name: "GPT 3",
+    name: "Space Odyssey",
     description:
-      "A Modern UI/UX Landing Page with Modern UI and UX built with Vanilla CSS. Fully responsive for all mobile devices. Used a figma design in to build this website.",
-    tags: ["ReactJS", "CSS", "JavaScript"],
+      "3D Solar System Landing Page built from scratch using React-Three-Fiber.Learn with real time data from various APIs, like NASA, ISS and Mars Rover. Login, Create Profile and give quizzes. Get Up-to-date News from user selected Space Agencies.",
+    tags: ["MERN Stack", "Redux", "React-Three-Fiber"],
 
-    demo: "https://gpt3-ui.netlify.app/",
-    github: "https://github.com/itsAbh15hek/GPT-3",
+    demo: "https://spaceodyssey-f3idp.ondigitalocean.app/",
+    youtube: "https://www.youtube.com/watch?v=ZmvxI51qM_w",
+    github: "https://github.com/orgs/sodyssey/repositories",
   },
   {
     id: 3,
-    name: "FIND A SHOW",
+    name: "THE SOCIAL SCOOP",
     description:
-      "Search TV shows and actors. Uses an API (TVmaze) to fetch data. Has a custom details page for each show. You can add shows to your favourites.",
-    tags: ["react", "api", "sass"],
+      "Fully interactive and Responsive UI using Vanilla CSS. Users can create and edit profiles and make Posts. Follow and Real-time Message functionality. Messages and Passwords are encrypted and then stored in database.",
+    tags: ["MERN Stack", "Socket IO", "Redux"],
 
-    demo: "https://itsabh15hek.github.io/find-a-show/",
-    github: "https://github.com/itsAbh15hek/find-a-show",
+    demo: "https://social-scoop.netlify.app/",
+    youtube: "https://www.youtube.com/watch?v=tPMaxsNawa4",
+    github: "https://github.com/orgs/sscoop/repositories",
   },
 ];

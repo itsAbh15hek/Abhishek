@@ -22,7 +22,6 @@ body{
  overflow-x: hidden;
  font-family: 'Source Sans Pro', sans-serif;
  -webkit-tap-highlight-color: rgba(0,0,0,0);
-
 }`;
 
 export default GlobalStyle;

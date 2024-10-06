@@ -70,6 +70,7 @@ const Description = styled.div`
   font-size: calc(0.5rem + 0.8vw);
   text-align: justify;
   margin: 10px 0;
+  width: 100%;
 
   strong {
     text-transform: uppercase;
@@ -104,36 +105,37 @@ const MySkills = ({ setThemeDark, theme }) => {
       <Main variants={item}>
         <Title>
           <Frontend className="skillIcon" />
-          <h2>Front End</h2>
+          <h2>Web Dev</h2>
         </Title>
         <Description>
-          I can build pixel-perfect websites. I'm passionate about beautiful
-          interfaces and intuitively implemented UX.
+          Build pixel-perfect websites, develop robust servers, manage REST
+          APIs, and efficiently handle databases.
         </Description>
         <Description>
           <strong>Skills</strong>
-          <p>
-            HTML5, CSS3, JavaScript, ReactJS, Redux Toolkit, Framer Motion,
-            SASS, Tailwind CSS
-          </p>
+          <p>ReactJS, Redux, NodeJS, Express, MongoDB, Mongoose, JWT</p>
+          <br />
           <strong>Tools</strong>
-          <p>Git, Github, Dev Tools</p>
+          <p>Git, Github, Dev Tools, Postman, Heroku</p>
         </Description>
       </Main>
       <Main variants={item}>
         <Title>
           <Backend className="skillIcon" />
-          <h2>Back End</h2>
+          <h2>DSA</h2>
         </Title>
         <Description>
-          I can build servers, handle REST API's and HTTP methods, store and
-          collect data from a database and communicate it to the client side.
+          Proficient in solving complex problems with a strong foundation in
+          data structures and algorithms.
         </Description>
         <Description>
-          <strong>Skills</strong>
-          <p>NodeJS, Express, MongoDB, Mongoose, JWT</p>
-          <strong>Tools</strong>
-          <p>Postman, Heroku, Netlify, VS Code, npm, Linux</p>
+          <strong>Links</strong>
+          <p>
+            <strong>Leetcode (1600+): </strong> 400+ problems
+          </p>
+          <p>
+            <strong>GFG (1700+): </strong> 200+ problems
+          </p>
         </Description>
       </Main>
       <SocialIcons />

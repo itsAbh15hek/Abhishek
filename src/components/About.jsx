@@ -63,7 +63,7 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: calc(0.6rem + 1vw);
+  font-size: 1.2rem;
   backdrop-filter: blur(4px);
   position: absolute;
   left: calc(5rem + 5vw);
@@ -71,6 +71,12 @@ const Main = styled.div`
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
   text-align: justify;
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 0.6rem;
+  }
   @media (max-width: 425px) {
     left: calc(1.2rem + 5vw);
   }
@@ -87,19 +93,21 @@ const About = ({ setThemeDark, theme }) => {
       </Kunai>
       <Main>
         <p>
-          Hi, I am Abhishek Singh. I'm a Full Stack Developer and a BCA(final
-          year) student at Lucknow University.
+          Hello, I'm Abhishek Singh, a Full Stack Web Developer and an MCA
+          student at NIT Allahabad.
         </p>
         <p>
           I’ve always been someone who has both a creative and a logical side.
-          When I discovered web design in college, I realized it would be the
-          perfect fit. I started with Front End Development in 2020, learnt a
-          lot of things during the lockdown and in 2021, I picked up backend
-          technologies to become a Full Stack Developer.
+          When I stumbled upon web development during my second year of BCA at
+          Lucknow University, I realised that it was the perfect fit for me. I
+          initially dived into Front End Development, and as my journey
+          continued, I delved into backend technologies during my final year,
+          ultimately becoming a Full Stack Developer.
         </p>
         <p>
-          I like trying new things and building great projects that last an
-          impression. You can connect with me via email or social links.
+          I thrive on exploring new horizons and creating impactful projects
+          that leave a lasting impression. Feel free to connect with me through
+          email or my social links.
         </p>
       </Main>
       <BigTitle top="75%" left="55%" text="ABOUT" />

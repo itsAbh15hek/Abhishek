@@ -46,11 +46,11 @@ const Main = styled(motion.ul)`
   top: 12rem;
   left: 0;
   padding: 0 5rem 0 calc(12rem + 20vw);
-  height: 50vh;
+  height: 100vh;
   right: 0;
   overflow-x: auto;
   display: flex;
-  align-items: center;
+  align-items: start;
 
   &::after {
     position: fixed;
@@ -82,6 +82,7 @@ const Projects = styled(Link)`
   padding: 2rem 5rem;
   backdrop-filter: blur(5px);
   font-size: 1.2rem;
+  margin-top: 140px;
   h3 {
     width: max-content;
   }

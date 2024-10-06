@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Github } from "../assets/svg/github-brands.svg";
+import { ReactComponent as Vid } from "../assets/svg/video-svgrepo-com.svg";
 
 const Box = styled(motion.li)`
-  width: 15rem;
-  height: 40vh;
+  width: 40rem;
+  height: 300px;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   padding: 1.5rem 2rem;
@@ -65,6 +66,8 @@ const Box = styled(motion.li)`
   }
   @media (max-width: 768px) {
     margin-right: 5rem;
+    width: 30rem;
+    height: 400px;
   }
   @media (max-width: 350px) {
     margin-right: 4rem;
@@ -74,7 +77,10 @@ const Box = styled(motion.li)`
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
-  width: 15rem;
+  width: 20rem;
+  @media (max-width: 350px) {
+    width: 15rem;
+  }
   .link {
     background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.text};
@@ -106,7 +112,7 @@ const item = {
 };
 
 const Card = ({ work }) => {
-  const { name, description, tags, demo, github } = work;
+  const { name, description, tags, demo, youtube, github } = work;
   return (
     <Box variants={item}>
       <h2>{name}</h2>
@@ -122,6 +128,9 @@ const Card = ({ work }) => {
       <Footer>
         <a href={demo} className="link" target="_blank" rel="noreferrer">
           Visit
+        </a>
+        <a href={youtube} target="_blank" rel="noreferrer">
+          <Vid className="github" />
         </a>
         <a href={github} target="_blank" rel="noreferrer">
           <Github className="github" />

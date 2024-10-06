@@ -127,8 +127,8 @@ const Intro = () => {
           <h3>I'm Abhishek Singh.</h3>
           <h6>
             I'm a Full-Stack Web Developer.
-            <br />I love to create simple yet beautiful websites with great user
-            experience.
+            <br />I have a passion for crafting visually stunning websites with
+            an elegantly simple user interface.
           </h6>
         </Text>
       </SubBox>
