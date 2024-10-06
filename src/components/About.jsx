@@ -7,6 +7,7 @@ import LogoComponent from "../subComponents/LogoComponent";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
+import ParticleBG from "../subComponents/ParticleBG";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
@@ -63,7 +64,7 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   backdrop-filter: blur(4px);
   position: absolute;
   left: calc(5rem + 5vw);
@@ -71,6 +72,9 @@ const Main = styled.div`
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
   text-align: justify;
+  @media (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
   @media (max-width: 600px) {
     font-size: 0.8rem;
   }

@@ -43,7 +43,7 @@ const swipe = keyframes`
 `;
 const Main = styled(motion.ul)`
   position: fixed;
-  top: 12rem;
+  top: 25vh;
   left: 0;
   padding: 0 5rem 0 calc(12rem + 20vw);
   height: 100vh;

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Frontend } from "../assets/svg/coding-svgrepo-com.svg";
-import { ReactComponent as Backend } from "../assets/svg/css-svgrepo-com.svg";
+import { ReactComponent as Backend } from "../assets/svg/node-tree-svgrepo-com.svg";
 import BigTitle from "../subComponents/BigTitle";
 import LogoComponent from "../subComponents/LogoComponent";
 import ParticleComponent from "../subComponents/ParticleComponent";
@@ -86,7 +86,7 @@ const container = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };

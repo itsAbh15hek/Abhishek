@@ -14,7 +14,7 @@ export const Work = [
     id: 2,
     name: "Space Odyssey",
     description:
-      "3D Solar System Landing Page built from scratch using React-Three-Fiber.Learn with real time data from various APIs, like NASA, ISS and Mars Rover. Login, Create Profile and give quizzes. Get Up-to-date News from user selected Space Agencies.",
+      "3D Solar System Landing Page built from scratch using React-Three-Fiber.Learn with real time data from various APIs, like ISS and Mars Rover. Login, Create Profile and give quizzes. Get News from user selected Space Agencies.",
     tags: ["MERN Stack", "Redux", "React-Three-Fiber"],
 
     demo: "https://spaceodyssey-f3idp.ondigitalocean.app/",

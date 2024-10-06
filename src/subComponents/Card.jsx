@@ -5,8 +5,8 @@ import { ReactComponent as Github } from "../assets/svg/github-brands.svg";
 import { ReactComponent as Vid } from "../assets/svg/video-svgrepo-com.svg";
 
 const Box = styled(motion.li)`
-  width: 40rem;
-  height: 300px;
+  width: calc(18rem + 1vw);
+  height: 40vh;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   padding: 1.5rem 2rem;
@@ -66,8 +66,8 @@ const Box = styled(motion.li)`
   }
   @media (max-width: 768px) {
     margin-right: 5rem;
-    width: 30rem;
-    height: 400px;
+    width: 20rem;
+    /* height: 400px; */
   }
   @media (max-width: 350px) {
     margin-right: 4rem;
@@ -77,9 +77,9 @@ const Box = styled(motion.li)`
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
-  width: 20rem;
+  width: calc(18rem + 1vw);
   @media (max-width: 350px) {
-    width: 15rem;
+    width: 10rem;
   }
   .link {
     background-color: ${(props) => props.theme.body};
