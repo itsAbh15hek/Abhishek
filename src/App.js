@@ -10,7 +10,6 @@ import { darkTheme, lightTheme } from "./components/Themes.jsx";
 import GlobalStyle from "./globalStyles";
 import SoundBar from "./subComponents/SoundBar.jsx";
 import Contact from "./components/Contact.jsx";
-import CursorComponent from "./subComponents/CursorComponent.jsx";
 
 function App() {
   const [themeDark, setThemeDark] = useState(true);
