@@ -7,7 +7,6 @@ import LogoComponent from "../subComponents/LogoComponent";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
-import ParticleBG from "../subComponents/ParticleBG";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
