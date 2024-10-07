@@ -1,4 +1,4 @@
 [build]	
+    publish = "_buid"
     command = "echo 'default context'"
-    functions="functions"
-    build = "build"
+    functions = "functions"
